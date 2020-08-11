@@ -11,7 +11,10 @@ router
 
 router.route("/:id")
 .get(ThreadController.getThreadById)
+// .get("/replies", ThreadController.getThreadByIdWithReplies)
 .patch(ThreadController.updateThread)
 .delete(ThreadController.deleteThread)
+
+router.get("/:id/replies", ThreadController.getThreadByIdWithReplies)
 
 module.exports = router;
