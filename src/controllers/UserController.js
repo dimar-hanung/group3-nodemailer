@@ -25,7 +25,8 @@ class UserController {
     const data = await User.update(
       { username, email, password },
       { where: { id: req.params.id } }
-    ).catch((err) => err);
+    )
+    .catch((err) => err);
     response.status = data[0] ? "Success" : false;
     response.data = data[0] ? req.body : {};
     res.json(response);
@@ -43,9 +44,11 @@ class UserController {
   static async saveUser(req, res) {
     const { body } = req;
     const data = await User.build(body);
-    data.save().catch((err) => err);
+    await data.save()
+    .then(res => response.data = res.dataValues)
+    .catch((err) => err);
+   
     response.status = data ? "Success" : false;
-    response.data = data ? data : {};
     res.json(response);
   }
 }
