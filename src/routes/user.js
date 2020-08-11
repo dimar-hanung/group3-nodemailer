@@ -5,12 +5,12 @@ const UserController = require("../controllers/UserController");
 
 router
 .get("/",UserController.getUser)
-// .post("/",ThreadController.saveAuthor)
+.post("/",UserController.saveUser)
 // .post("/image",ThreadController.uploadImage)
 
-// router.route("/:id")
-// .get(ThreadController.getAuthorById)
-// .patch(ThreadController.updateAuthor)
-// .delete(ThreadController.deleteAuthor)
+router.route("/:id")
+.get(UserController.getUserById)
+.patch(UserController.updateUser)
+.delete(UserController.deleteUser)
 
 module.exports = router;
