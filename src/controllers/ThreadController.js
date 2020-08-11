@@ -1,4 +1,4 @@
-const { Thread } = require("../db/models");
+const { Thread, Replies } = require("../db/models");
 const response = {
   status: true,
   data: [],
@@ -8,7 +8,6 @@ class ThreadController {
   static async getThread(req, res) {
     const thread = await Thread.findAll();
     response.data = thread;
-    response.message = "Succes get data";
 
     res.json(response);
   }
@@ -95,6 +94,24 @@ class ThreadController {
       response.data = [];
       response.status = "fail";
       res.status(404).json(response)
+    }
+  }
+
+  static async getThreadByIdWithReplies(req, res) {
+    const {id} = req.params;
+    const ThreadDetail = await Thread.findByPk(id, {
+      include: Replies
+    })
+    try {
+        if(!ThreadDetail) throw new Error("Data Not Found")
+        response.data = ThreadDetail;
+        response.status = "Success";
+        res.json(response)
+    } catch (error) {
+          // response.message = error.message;
+          response.data = [];
+          response.status = "fail";
+          res.status(404).json(response)
     }
   }
   
