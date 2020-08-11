@@ -16,7 +16,7 @@ module.exports = {
                 onDelete: 'CASCADE',
                 onUpdate: 'CASCADE',
                 references: {
-                    model: 'Thread',
+                    model: 'Threads',
                     key: 'id',
                     as: 'ThreadId',
                 }
@@ -26,7 +26,7 @@ module.exports = {
                 onDelete: 'CASCADE',
                 onUpdate: 'CASCADE',
                 references: {
-                    model: 'User',
+                    model: 'Users',
                     key: 'id',
                     as: 'UserId',
                 }

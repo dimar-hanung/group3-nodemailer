@@ -19,7 +19,7 @@ module.exports = {
                 onDelete: 'CASCADE',
                 onUpdate: 'CASCADE',
                 references: {
-                    model: 'User',
+                    model: 'Users',
                     key: 'id',
                     as: 'UserId',
                 }
