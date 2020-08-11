@@ -5,12 +5,12 @@ const response = {
   data: [],
 };
 
-class ThreadController {
-  static async getThread(req, res) {
+class RepliesController {
+  static async getReplies(req, res) {
    
     res.json(response);
   }
   
 }
 
-module.exports = ThreadController;
+module.exports = RepliesController;
