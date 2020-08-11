@@ -6,7 +6,7 @@ module.exports = {
                 username: 'pancaputra',
                 password: '12345',
                 email: 'rectapanca@gmail.com',
-                full_name: 'Panca Putra Siregar',
+                full_name: 'Panca Putra',
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -25,7 +25,16 @@ module.exports = {
                 full_name: 'Musyahid Abror',
                 createdAt: new Date(),
                 updatedAt: new Date()
+            },
+            {
+                username: 'subhandinda',
+                password: '12345',
+                email: 'subhan.dinda.putra@gmail.com',
+                full_name: 'Subhan Dinda Putra',
+                createdAt: new Date(),
+                updatedAt: new Date()
             }
+            
 
         ]);
     },
