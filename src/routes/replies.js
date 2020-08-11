@@ -5,12 +5,12 @@ const RepliesController = require("../controllers/RepliesController");
 
 router
 .get("/",RepliesController.getReplies)
-// .post("/",ThreadController.saveAuthor)
+.post("/",RepliesController.saveReplies)
 // .post("/image",ThreadController.uploadImage)
 
-// router.route("/:id")
-// .get(ThreadController.getAuthorById)
-// .patch(ThreadController.updateAuthor)
-// .delete(ThreadController.deleteAuthor)
+router.route("/:id")
+.get(RepliesController.getRepliesById)
+.patch(RepliesController.updateReplies)
+.delete(RepliesController.deleteReplies)
 
 module.exports = router;
