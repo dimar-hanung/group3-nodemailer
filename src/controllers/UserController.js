@@ -42,10 +42,10 @@ class UserController {
   }
   static async saveUser(req, res) {
     const { body } = req;
-    const data = await User.build(body).catch((err) => err);
-    data.save();
+    const data = await User.build(body);
+    data.save().catch((err) => err);
     response.status = data ? "Success" : false;
-    response.data = data ? body : {};
+    response.data = data ? data : {};
     res.json(response);
   }
 }
