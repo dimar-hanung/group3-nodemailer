@@ -13,7 +13,7 @@ module.exports = {
             {
                 username: 'dimarhanung',
                 password: '12345',
-                email: 'dimarhanung@gmail.com.com',
+                email: 'dimarhanung@gmail.com',
                 full_name: 'Dimar Hanung Prakoso',
                 createdAt: new Date(),
                 updatedAt: new Date()
