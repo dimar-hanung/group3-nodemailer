@@ -13,8 +13,8 @@
 ## Main Task
 - [x] Link Documentation : https://documenter.getpostman.com/view/2966433/T1LLEnu3
 - [x] Make Database Table - Relational
-- [ ] Nodemaliers work (Send Email & Receive)
-- [ ] Member Include Thread and Replies
-- [ ] Make RESTful API
-- [ ] Send email when thread have replied
+- [x] Nodemaliers work (Send Email & Receive)
+- [x] Member Include Thread and Replies
+- [x] Make RESTful API
+- [x] Send email when thread have replied
 
