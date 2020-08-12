@@ -22,13 +22,9 @@ class RepliesController {
         ThreadId: body.ThreadId,
         UserId: body.UserId,
       });
-      // console.log(saveReplies.dataValues);
       (response.status = "Success"), (response.data = saveReplies);
-      let user = await User.findByPk(body.UserId);
-      user = user.dataValues
-      let thread = await Thread.findByPk(body.ThreadId)
-      thread = thread.dataValues
-      console.log(thread)
+      const user = await User.findByPk(body.UserId);
+      const thread = await Thread.findByPk(body.ThreadId)
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -41,15 +37,15 @@ class RepliesController {
       <h1 style="text-align:center;padding:5px;border-radius:5px;background:#007bff;color:white">
       Halo ${user.username}
       </h1>
-      <div>Anda Mendapat Balasan di postingan anda yang berjudul <b>${thread.title}</b></div>
-      <div>Isi Balasan : ${saveReplies.dataValues.content}
+      <div>Anda Mendapat Balasan di Thread anda yang berjudul <b>${thread.title}</b></div>
+      <div>Isi Balasan : ${body.content}
       <div> Terima kasih</div>
       `
       console.log(user.email)
       const mailOptions = {
         from: "group3emaildemo@gmail.com",
         to: user.email ,
-        subject: "Test HTML, belum dinamis",
+        subject: `Balasan Thread ${thread.title}`,
         html: html,
       };
       
