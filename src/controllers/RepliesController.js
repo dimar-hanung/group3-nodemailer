@@ -1,5 +1,6 @@
 const { Replies, User, Thread } = require("../db/models");
-var nodemailer = require("nodemailer");
+require('dotenv').config();
+const nodemailer = require("nodemailer");
 const response = {
   status: true,
   data: [],
@@ -28,8 +29,8 @@ class RepliesController {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "group3emaildemo@gmail.com",
-          pass: "msvcp100M426",
+          user: process.env.EMAIL_USERNAME,
+          pass: process.env.EMAIL_PASSWORD,
         },
       });
      
