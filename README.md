@@ -18,3 +18,12 @@
 - [x] Make RESTful API
 - [x] Send email when thread have replied
 
+## How To Run
+1. npm install
+1. `sequelize-cli db:migrate`
+1. `sequelize-cli db:seed:all` (opsional)
+1. Setting .env file
+1. npm start
+
+## Note
+Email must turn On Less secure app access, https://myaccount.google.com/u/1/security
