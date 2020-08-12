@@ -9,14 +9,14 @@ class UserController {
   static async getUser(req, res) {
     const data = await User.findAll({}).catch((err) => err);
     response.status = data ? "Success" : false;
-    response.data = data;
+    response.data = User.filterAll(data);
     res.json(response);
   }
 
   static async getUserById(req, res) {
     const data = await User.findByPk(req.params.id).catch((err) => err);
     response.status = data ? "Success" : false;
-    response.data = data ? data : {};
+    response.data = data ? User.filter(data) : {};
     res.json(response);
   }
 
