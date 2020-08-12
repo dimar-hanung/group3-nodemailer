@@ -22,23 +22,26 @@ class UserController {
 
   static async updateUser(req, res) {
     const { username, email, password } = req.body;
+    const { id } = req.params
     const data = await User.update(
       { username, email, password },
-      { where: { id: req.params.id } }
+      { where: { id: id } }
     )
     .catch((err) => err);
-    response.status = data[0] ? "Success" : false;
-    response.data = data[0] ? req.body : {};
+    const userData = await User.findByPk(id)
+    .catch(err => err);
+    response.status = data[0] ? "Success, data updated" : false;
+    response.data = data[0] ? userData : {};
     res.json(response);
   }
 
   static async deleteUser(req, res) {
-    console.log(req.params);
+    const { id } = req.params
     const data = await User.destroy({
-      where: { id: req.params.id },
+      where: { id: id },
     }).catch((err) => err);
     response.status = data ? "Success, data deleted" : false;
-    response.data = data ? req.body : {};
+    response.data = data ? {id:id} : {};
     res.json(response);
   }
   static async saveUser(req, res) {
