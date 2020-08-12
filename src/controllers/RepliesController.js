@@ -44,7 +44,7 @@ class RepliesController {
       `
       console.log(user.email)
       const mailOptions = {
-        from: "group3emaildemo@gmail.com",
+        from: process.env.EMAIL_USERNAME,
         to: user.email ,
         subject: `Balasan Thread ${thread.title}`,
         html: html,
@@ -54,12 +54,7 @@ class RepliesController {
         if (err) throw err;
         console.log("Email sent: " + info.response);
       });
-
-
-
-
-
-
+      response.message = undefined
       res.status(201).json(response);
     } catch (error) {
       response.status = false;
