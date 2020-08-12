@@ -26,4 +26,4 @@
 1. npm start
 
 ## Note
-Email must turn nn Less secure app access, https://myaccount.google.com/u/1/security
+Email must turn on Less secure app access, https://myaccount.google.com/u/1/security
